@@ -19,7 +19,7 @@ endif
 
 #
 # Supported Architectures
-ifneq ($(filter-out x86 arm aarch64 ppc64 s390 mips,$(ARCH)),)
+ifneq ($(filter-out x86 arm aarch64 ppc64 s390 mips loongarch64,$(ARCH)),)
         $(error "The architecture $(ARCH) isn't supported")
 endif
 
@@ -78,6 +78,10 @@ endif
 
 ifeq ($(ARCH),mips)
         DEFINES		:= -DCONFIG_MIPS 
+endif
+
+ifeq ($(ARCH),loongarch64)
+        DEFINES		:= -DCONFIG_LOONGARCH64 
 endif
 
 #

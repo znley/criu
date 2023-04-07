@@ -29,7 +29,7 @@ lib-y			+= src/lib/infect.o
 lib-y			+= src/lib/ptrace.o
 
 # handle_elf() has no support of ELF relocations on ARM (yet?)
-ifneq ($(filter arm aarch64,$(ARCH)),)
+ifneq ($(filter arm aarch64 loongarch64,$(ARCH)),)
 CFLAGS			+= -DNO_RELOCS
 HOSTCFLAGS		+= -DNO_RELOCS
 endif

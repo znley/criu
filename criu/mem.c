@@ -1225,7 +1225,7 @@ err_addr:
 
 static int maybe_disable_thp(struct pstree_item *t, struct page_read *pr)
 {
-	struct _MmEntry *mm = rsti(t)->mm;
+	struct MmEntry *mm = rsti(t)->mm;
 
 	/*
 	 * There is no need to disable it if the page read doesn't

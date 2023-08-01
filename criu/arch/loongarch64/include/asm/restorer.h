@@ -93,5 +93,6 @@ int restore_gpregs(struct rt_sigframe *f, UserLoongarch64GpregsEntry *r);
 int restore_nonsigframe_gpregs(UserLoongarch64GpregsEntry *r);
 
 #define arch_map_vdso(map, compat) -1
+#define ARCH_HAS_SHMAT_HOOK
 
 #endif
